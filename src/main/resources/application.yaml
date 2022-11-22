@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: aws-pipeline
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] [%logger]: %msg%n"
+  level:
+    org.apache.camel: INFO
+
+---
+spring:
+  profiles: development
+      
+quartz2:
+  initialDelay: 5000
+  repetionCount: 2
+
+thread-pooling:
+  core-pool-size: 25
+  max-pool-size: 200
+
+server:
+  tomcat:
+    accept-count: 100
+    max-connections: 500
+    max-threads: 200
+
